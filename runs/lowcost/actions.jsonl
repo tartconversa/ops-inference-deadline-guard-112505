@@ -1,0 +1,10 @@
+{"at_ms": 0, "action": "dispatch_attempt", "request_id": "r11", "attempt_no": 1, "worker": "a1", "pool": "main", "variant": "full", "bound_units": 57, "is_probe": false}
+{"at_ms": 3, "action": "dispatch_attempt", "request_id": "r12", "attempt_no": 1, "worker": "a2", "pool": "main", "variant": "full", "bound_units": 45, "is_probe": false}
+{"at_ms": 12, "action": "dispatch_attempt", "request_id": "c21", "attempt_no": 1, "worker": "a1", "pool": "main", "variant": "full", "bound_units": 50, "is_probe": false}
+{"at_ms": 24, "action": "cancel_attempt", "request_id": "r12", "attempt_no": 1, "worker": "a2", "attempt_key": "r12#1"}
+{"at_ms": 35, "action": "dispatch_attempt", "request_id": "c23", "attempt_no": 1, "worker": "a2", "pool": "main", "variant": "full", "bound_units": 36, "is_probe": false}
+{"at_ms": 41, "action": "dispatch_attempt", "request_id": "r13", "attempt_no": 1, "worker": "b1", "pool": "fallback", "variant": "small", "bound_units": 17, "is_probe": false}
+{"at_ms": 42, "action": "dispatch_prepared_backup", "request_id": "c23", "attempt_no": 2, "worker": "b3", "bound_units": 18, "caused_by": "sink_closed_empty", "delivery_gate_open": true}
+{"at_ms": 43, "action": "dispatch_attempt", "request_id": "r11", "attempt_no": 2, "worker": "b1", "pool": "fallback", "variant": "small", "bound_units": 29, "is_probe": false}
+{"at_ms": 57, "action": "cancel_shadow_backup", "request_id": "c23", "attempt_no": 1, "worker": "a2", "reason": "credible result arrived from another attempt"}
+{"at_ms": 78, "action": "dispatch_attempt", "request_id": "c24", "attempt_no": 1, "worker": "a1", "pool": "main", "variant": "full", "bound_units": 59, "is_probe": false}

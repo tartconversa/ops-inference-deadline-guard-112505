@@ -1,0 +1,74 @@
+{
+  "config_name": "materials",
+  "clock_ms": 83,
+  "events_processed": 24,
+  "request_status_counts": {
+    "admitted": 3,
+    "cancelled": 1,
+    "delivered": 1,
+    "rejected": 1,
+    "completed": 1
+  },
+  "requests": {
+    "r11": {
+      "status": "admitted",
+      "reason": null,
+      "attempts": [
+        1,
+        2
+      ],
+      "delivered_attempt": null
+    },
+    "r12": {
+      "status": "cancelled",
+      "reason": "caller_cancelled",
+      "attempts": [
+        1
+      ],
+      "delivered_attempt": null
+    },
+    "c21": {
+      "status": "delivered",
+      "reason": null,
+      "attempts": [
+        1,
+        2
+      ],
+      "delivered_attempt": 1
+    },
+    "c22": {
+      "status": "rejected",
+      "reason": "deadline_infeasible_waiting_for_capacity",
+      "attempts": [],
+      "delivered_attempt": null
+    },
+    "c23": {
+      "status": "completed",
+      "reason": null,
+      "attempts": [
+        1,
+        2
+      ],
+      "delivered_attempt": 2
+    },
+    "r13": {
+      "status": "admitted",
+      "reason": null,
+      "attempts": [
+        1
+      ],
+      "delivered_attempt": null
+    },
+    "c24": {
+      "status": "admitted",
+      "reason": null,
+      "attempts": [
+        1
+      ],
+      "delivered_attempt": null
+    }
+  },
+  "live_charge_count": 3,
+  "trace_events": 61,
+  "reconcile_ok": true
+}

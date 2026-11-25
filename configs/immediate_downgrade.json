@@ -1,0 +1,6 @@
+{
+  "name": "greedy-immediate-downgrade",
+  "policy": {
+    "downgrade_mode": "immediate"
+  }
+}

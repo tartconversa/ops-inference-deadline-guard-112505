@@ -1,0 +1,2054 @@
+[
+  {
+    "request_id": "c21",
+    "found": true,
+    "status": "delivered",
+    "status_reason": null,
+    "tenant": "caption",
+    "deadline_ms": 61,
+    "submitted_at_ms": 12,
+    "allow_small": true,
+    "units": 36,
+    "units_ceiling": 50,
+    "delivered_attempt": 1,
+    "admission_promises": [
+      {
+        "at_ms": 12,
+        "request_id": "c21",
+        "attempt_no": 1,
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 36,
+        "bound_units": 50,
+        "slots": 1,
+        "p95_ms": 38,
+        "deadline_ms": 61,
+        "projected_finish_ms": 50,
+        "deadline_slack_ms": 11,
+        "reservation_slice": {
+          "reserved": 0,
+          "borrowed": 0,
+          "spare": 50
+        },
+        "prepared": false,
+        "note": null
+      },
+      {
+        "at_ms": 28,
+        "request_id": "c21",
+        "attempt_no": 2,
+        "worker": "b3",
+        "pool": "eco",
+        "variant": "small",
+        "estimated_units": 18,
+        "bound_units": 25,
+        "slots": 1,
+        "p95_ms": 12,
+        "deadline_ms": 61,
+        "projected_finish_ms": 40,
+        "deadline_slack_ms": 21,
+        "reservation_slice": {
+          "reserved": 25,
+          "borrowed": 0,
+          "spare": 0
+        },
+        "prepared": true,
+        "note": null
+      }
+    ],
+    "attempts": [
+      {
+        "key": "c21#1",
+        "request_id": "c21",
+        "attempt_no": 1,
+        "tenant": "caption",
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 36,
+        "bound_units": 50,
+        "status": "released",
+        "observed_units": null,
+        "started_at_ms": null,
+        "dispatched_at_ms": 12,
+        "released_at_ms": 42,
+        "release_observed_at_ms": 49,
+        "prepared": false,
+        "is_probe": false,
+        "promise": {
+          "at_ms": 12,
+          "request_id": "c21",
+          "attempt_no": 1,
+          "worker": "a1",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 36,
+          "bound_units": 50,
+          "slots": 1,
+          "p95_ms": 38,
+          "deadline_ms": 61,
+          "projected_finish_ms": 50,
+          "deadline_slack_ms": 11,
+          "reservation_slice": {
+            "reserved": 0,
+            "borrowed": 0,
+            "spare": 50
+          },
+          "prepared": false,
+          "note": null
+        },
+        "slice": {
+          "reserved": 0,
+          "borrowed": 0,
+          "spare": 50
+        },
+        "charge_units": 36,
+        "holds_charge": false
+      },
+      {
+        "key": "c21#2",
+        "request_id": "c21",
+        "attempt_no": 2,
+        "tenant": "caption",
+        "worker": "b3",
+        "pool": "eco",
+        "variant": "small",
+        "estimated_units": 18,
+        "bound_units": 25,
+        "status": "cancel_requested",
+        "observed_units": null,
+        "started_at_ms": null,
+        "dispatched_at_ms": null,
+        "released_at_ms": null,
+        "release_observed_at_ms": null,
+        "prepared": true,
+        "is_probe": false,
+        "promise": {
+          "at_ms": 28,
+          "request_id": "c21",
+          "attempt_no": 2,
+          "worker": "b3",
+          "pool": "eco",
+          "variant": "small",
+          "estimated_units": 18,
+          "bound_units": 25,
+          "slots": 1,
+          "p95_ms": 12,
+          "deadline_ms": 61,
+          "projected_finish_ms": 40,
+          "deadline_slack_ms": 21,
+          "reservation_slice": {
+            "reserved": 25,
+            "borrowed": 0,
+            "spare": 0
+          },
+          "prepared": true,
+          "note": null
+        },
+        "slice": {
+          "reserved": 25,
+          "borrowed": 0,
+          "spare": 0
+        },
+        "charge_units": 18,
+        "holds_charge": true
+      }
+    ],
+    "egress": {
+      "c21#1": {
+        "key": "c21#1",
+        "request_id": "c21",
+        "attempt_no": 1,
+        "first_received": true,
+        "first_received_at_ms": 31,
+        "first_occurred_at_ms": 22,
+        "sink": null,
+        "stopped": false,
+        "empty": false,
+        "finished": false
+      }
+    },
+    "feedback_decisions": [
+      {
+        "seq": 19,
+        "at_ms": 28,
+        "kind": "feedback_timeout",
+        "request_id": "c21",
+        "attempt_no": 1,
+        "worker": "a1",
+        "occurred_ms": 27,
+        "note": "observer timeout; a late first_chunk may still arrive"
+      },
+      {
+        "seq": 22,
+        "at_ms": 31,
+        "kind": "feedback_first_chunk",
+        "request_id": "c21",
+        "attempt_no": 1,
+        "worker": "a1",
+        "occurred_ms": 22,
+        "late_relative_to_control_timeout": true,
+        "duplicate": false
+      },
+      {
+        "seq": 23,
+        "at_ms": 31,
+        "kind": "delivery_claimed_single_credible_result",
+        "request_id": "c21",
+        "delivered_via_attempt": 1,
+        "idempotency_key": "result:c21",
+        "caller_receipt_duplicate": false,
+        "model_locked": true
+      },
+      {
+        "seq": 24,
+        "at_ms": 31,
+        "kind": "prepared_backup_aborted",
+        "request_id": "c21",
+        "attempt_key": "c21#2",
+        "reason": "late_first_chunk_claimed_result",
+        "note": "reservation removed; no replica occupancy existed"
+      },
+      {
+        "seq": 45,
+        "at_ms": 49,
+        "kind": "feedback_released",
+        "request_id": "c21",
+        "attempt_no": 1,
+        "worker": "a1",
+        "occurred_ms": 42,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 36,
+        "loans_returned": []
+      }
+    ],
+    "timeline": [
+      {
+        "seq": 8,
+        "at_ms": 12,
+        "kind": "submitted",
+        "request_id": "c21",
+        "tenant": "caption",
+        "units": 36,
+        "units_ceiling": 50,
+        "deadline_ms": 61,
+        "allow_small": true
+      },
+      {
+        "seq": 9,
+        "at_ms": 12,
+        "kind": "admitted",
+        "request_id": "c21",
+        "attempt_no": 1,
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 36,
+        "bound_units": 50,
+        "p95_ms": 38,
+        "finish_ms": 50,
+        "slack_ms": 11,
+        "active_on_worker": 1,
+        "own_reserved_units": 50,
+        "has_reservation_affinity": true,
+        "low_cost": false,
+        "reservation_slice": {
+          "reserved": 0,
+          "borrowed": 0,
+          "spare": 50
+        },
+        "promise": {
+          "at_ms": 12,
+          "request_id": "c21",
+          "attempt_no": 1,
+          "worker": "a1",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 36,
+          "bound_units": 50,
+          "slots": 1,
+          "p95_ms": 38,
+          "deadline_ms": 61,
+          "projected_finish_ms": 50,
+          "deadline_slack_ms": 11,
+          "reservation_slice": {
+            "reserved": 0,
+            "borrowed": 0,
+            "spare": 50
+          },
+          "prepared": false,
+          "note": null
+        }
+      },
+      {
+        "seq": 10,
+        "at_ms": 12,
+        "kind": "action",
+        "request_id": "c21",
+        "action_kind": "dispatch_attempt",
+        "attempt_no": 1,
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "bound_units": 50,
+        "is_probe": false
+      },
+      {
+        "seq": 19,
+        "at_ms": 28,
+        "kind": "feedback_timeout",
+        "request_id": "c21",
+        "attempt_no": 1,
+        "worker": "a1",
+        "occurred_ms": 27,
+        "note": "observer timeout; a late first_chunk may still arrive"
+      },
+      {
+        "seq": 20,
+        "at_ms": 28,
+        "kind": "backup_prepared",
+        "request_id": "c21",
+        "attempt_no": 2,
+        "worker": "b3",
+        "pool": "eco",
+        "variant": "small",
+        "estimated_units": 18,
+        "bound_units": 25,
+        "p95_ms": 12,
+        "finish_ms": 40,
+        "slack_ms": 21,
+        "active_on_worker": 0,
+        "own_reserved_units": 40,
+        "has_reservation_affinity": true,
+        "low_cost": true,
+        "reservation_slice": {
+          "reserved": 25,
+          "borrowed": 0,
+          "spare": 0
+        },
+        "promise": {
+          "at_ms": 28,
+          "request_id": "c21",
+          "attempt_no": 2,
+          "worker": "b3",
+          "pool": "eco",
+          "variant": "small",
+          "estimated_units": 18,
+          "bound_units": 25,
+          "slots": 1,
+          "p95_ms": 12,
+          "deadline_ms": 61,
+          "projected_finish_ms": 40,
+          "deadline_slack_ms": 21,
+          "reservation_slice": {
+            "reserved": 25,
+            "borrowed": 0,
+            "spare": 0
+          },
+          "prepared": true,
+          "note": null
+        }
+      },
+      {
+        "seq": 21,
+        "at_ms": 28,
+        "kind": "backup_prepared_because",
+        "request_id": "c21",
+        "attempt_no": 2,
+        "caused_by": "timeout",
+        "delivery_gate": "blocked_until_old_attempt_confirmed_empty_and_closed"
+      },
+      {
+        "seq": 22,
+        "at_ms": 31,
+        "kind": "feedback_first_chunk",
+        "request_id": "c21",
+        "attempt_no": 1,
+        "worker": "a1",
+        "occurred_ms": 22,
+        "late_relative_to_control_timeout": true,
+        "duplicate": false
+      },
+      {
+        "seq": 23,
+        "at_ms": 31,
+        "kind": "delivery_claimed_single_credible_result",
+        "request_id": "c21",
+        "delivered_via_attempt": 1,
+        "idempotency_key": "result:c21",
+        "caller_receipt_duplicate": false,
+        "model_locked": true
+      },
+      {
+        "seq": 24,
+        "at_ms": 31,
+        "kind": "prepared_backup_aborted",
+        "request_id": "c21",
+        "attempt_key": "c21#2",
+        "reason": "late_first_chunk_claimed_result",
+        "note": "reservation removed; no replica occupancy existed"
+      },
+      {
+        "seq": 45,
+        "at_ms": 49,
+        "kind": "feedback_released",
+        "request_id": "c21",
+        "attempt_no": 1,
+        "worker": "a1",
+        "occurred_ms": 42,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 36,
+        "loans_returned": []
+      },
+      {
+        "seq": 46,
+        "at_ms": 49,
+        "kind": "delivered_attempt_released_result_kept_locked",
+        "request_id": "c21",
+        "attempt_no": 1
+      }
+    ]
+  },
+  {
+    "request_id": "c22",
+    "found": true,
+    "status": "rejected",
+    "status_reason": "deadline_infeasible_waiting_for_capacity",
+    "tenant": "caption",
+    "deadline_ms": 58,
+    "submitted_at_ms": 15,
+    "allow_small": false,
+    "units": 25,
+    "units_ceiling": 39,
+    "delivered_attempt": null,
+    "admission_promises": [],
+    "attempts": [],
+    "egress": {},
+    "feedback_decisions": [],
+    "timeline": [
+      {
+        "seq": 11,
+        "at_ms": 15,
+        "kind": "submitted",
+        "request_id": "c22",
+        "tenant": "caption",
+        "units": 25,
+        "units_ceiling": 39,
+        "deadline_ms": 58,
+        "allow_small": false
+      },
+      {
+        "seq": 12,
+        "at_ms": 15,
+        "kind": "queued",
+        "request_id": "c22",
+        "reason": "no_worker_fit_or_deadline_safe_placement_now"
+      },
+      {
+        "seq": 14,
+        "at_ms": 24,
+        "kind": "rejected",
+        "request_id": "c22",
+        "reason": "deadline_infeasible_waiting_for_capacity",
+        "fastest_p95_ms": 38,
+        "latest_start_ms": 20
+      }
+    ]
+  },
+  {
+    "request_id": "c23",
+    "found": true,
+    "status": "completed",
+    "status_reason": null,
+    "tenant": "caption",
+    "deadline_ms": 85,
+    "submitted_at_ms": 33,
+    "allow_small": true,
+    "units": 22,
+    "units_ceiling": 36,
+    "delivered_attempt": 2,
+    "admission_promises": [
+      {
+        "at_ms": 35,
+        "request_id": "c23",
+        "attempt_no": 1,
+        "worker": "a2",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 22,
+        "bound_units": 36,
+        "slots": 1,
+        "p95_ms": 40,
+        "deadline_ms": 85,
+        "projected_finish_ms": 75,
+        "deadline_slack_ms": 10,
+        "reservation_slice": {
+          "reserved": 0,
+          "borrowed": 0,
+          "spare": 36
+        },
+        "prepared": false,
+        "note": null
+      },
+      {
+        "at_ms": 39,
+        "request_id": "c23",
+        "attempt_no": 2,
+        "worker": "b3",
+        "pool": "eco",
+        "variant": "small",
+        "estimated_units": 11,
+        "bound_units": 18,
+        "slots": 1,
+        "p95_ms": 12,
+        "deadline_ms": 85,
+        "projected_finish_ms": 51,
+        "deadline_slack_ms": 34,
+        "reservation_slice": {
+          "reserved": 18,
+          "borrowed": 0,
+          "spare": 0
+        },
+        "prepared": true,
+        "note": null
+      }
+    ],
+    "attempts": [
+      {
+        "key": "c23#1",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "tenant": "caption",
+        "worker": "a2",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 22,
+        "bound_units": 36,
+        "status": "released",
+        "observed_units": null,
+        "started_at_ms": null,
+        "dispatched_at_ms": 35,
+        "released_at_ms": 54,
+        "release_observed_at_ms": 66,
+        "prepared": false,
+        "is_probe": false,
+        "promise": {
+          "at_ms": 35,
+          "request_id": "c23",
+          "attempt_no": 1,
+          "worker": "a2",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 22,
+          "bound_units": 36,
+          "slots": 1,
+          "p95_ms": 40,
+          "deadline_ms": 85,
+          "projected_finish_ms": 75,
+          "deadline_slack_ms": 10,
+          "reservation_slice": {
+            "reserved": 0,
+            "borrowed": 0,
+            "spare": 36
+          },
+          "prepared": false,
+          "note": null
+        },
+        "slice": {
+          "reserved": 0,
+          "borrowed": 0,
+          "spare": 36
+        },
+        "charge_units": 22,
+        "holds_charge": false
+      },
+      {
+        "key": "c23#2",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "tenant": "caption",
+        "worker": "b3",
+        "pool": "eco",
+        "variant": "small",
+        "estimated_units": 11,
+        "bound_units": 18,
+        "status": "released",
+        "observed_units": null,
+        "started_at_ms": null,
+        "dispatched_at_ms": 42,
+        "released_at_ms": 59,
+        "release_observed_at_ms": 60,
+        "prepared": true,
+        "is_probe": false,
+        "promise": {
+          "at_ms": 39,
+          "request_id": "c23",
+          "attempt_no": 2,
+          "worker": "b3",
+          "pool": "eco",
+          "variant": "small",
+          "estimated_units": 11,
+          "bound_units": 18,
+          "slots": 1,
+          "p95_ms": 12,
+          "deadline_ms": 85,
+          "projected_finish_ms": 51,
+          "deadline_slack_ms": 34,
+          "reservation_slice": {
+            "reserved": 18,
+            "borrowed": 0,
+            "spare": 0
+          },
+          "prepared": true,
+          "note": null
+        },
+        "slice": {
+          "reserved": 18,
+          "borrowed": 0,
+          "spare": 0
+        },
+        "charge_units": 11,
+        "holds_charge": false
+      }
+    ],
+    "egress": {
+      "c23#1": {
+        "key": "c23#1",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "first_received": false,
+        "first_received_at_ms": null,
+        "first_occurred_at_ms": null,
+        "sink": "sink_closed_empty",
+        "stopped": true,
+        "empty": true,
+        "finished": false
+      },
+      "c23#2": {
+        "key": "c23#2",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "first_received": true,
+        "first_received_at_ms": 57,
+        "first_occurred_at_ms": 56,
+        "sink": "sink_finished",
+        "stopped": true,
+        "empty": false,
+        "finished": true
+      }
+    },
+    "feedback_decisions": [
+      {
+        "seq": 31,
+        "at_ms": 39,
+        "kind": "feedback_timeout",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "worker": "a2",
+        "occurred_ms": 38,
+        "note": "observer timeout; a late first_chunk may still arrive"
+      },
+      {
+        "seq": 37,
+        "at_ms": 42,
+        "kind": "feedback_sink_closed_empty",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "repeated": false,
+        "occurred_ms": 41,
+        "egress_state": {
+          "key": "c23#1",
+          "request_id": "c23",
+          "attempt_no": 1,
+          "first_received": false,
+          "first_received_at_ms": null,
+          "first_occurred_at_ms": null,
+          "sink": "sink_closed_empty",
+          "stopped": true,
+          "empty": true,
+          "finished": false
+        }
+      },
+      {
+        "seq": 38,
+        "at_ms": 42,
+        "kind": "old_attempt_confirmed_empty_and_closed",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "decision": "prepared backup may now be launched and deliver"
+      },
+      {
+        "seq": 40,
+        "at_ms": 42,
+        "kind": "backup_launched",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "caused_by": "sink_closed_empty"
+      },
+      {
+        "seq": 49,
+        "at_ms": 57,
+        "kind": "feedback_first_chunk",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "worker": "b1",
+        "occurred_ms": 56,
+        "late_relative_to_control_timeout": true,
+        "duplicate": false
+      },
+      {
+        "seq": 50,
+        "at_ms": 57,
+        "kind": "delivery_claimed_single_credible_result",
+        "request_id": "c23",
+        "delivered_via_attempt": 2,
+        "idempotency_key": "result:c23",
+        "caller_receipt_duplicate": false,
+        "model_locked": true
+      },
+      {
+        "seq": 53,
+        "at_ms": 60,
+        "kind": "feedback_released",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "worker": "b1",
+        "occurred_ms": 59,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 11,
+        "loans_returned": []
+      },
+      {
+        "seq": 57,
+        "at_ms": 63,
+        "kind": "feedback_sink_finished",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "repeated": false,
+        "occurred_ms": 62,
+        "egress_state": {
+          "key": "c23#2",
+          "request_id": "c23",
+          "attempt_no": 2,
+          "first_received": true,
+          "first_received_at_ms": 57,
+          "first_occurred_at_ms": 56,
+          "sink": "sink_finished",
+          "stopped": true,
+          "empty": false,
+          "finished": true
+        }
+      },
+      {
+        "seq": 59,
+        "at_ms": 66,
+        "kind": "feedback_released",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "worker": "a2",
+        "occurred_ms": 54,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 22,
+        "loans_returned": []
+      }
+    ],
+    "timeline": [
+      {
+        "seq": 25,
+        "at_ms": 33,
+        "kind": "submitted",
+        "request_id": "c23",
+        "tenant": "caption",
+        "units": 22,
+        "units_ceiling": 36,
+        "deadline_ms": 85,
+        "allow_small": true
+      },
+      {
+        "seq": 26,
+        "at_ms": 33,
+        "kind": "waiting_for_primary_pool",
+        "request_id": "c23",
+        "latest_primary_start_ms": 45,
+        "fallback_choice_held_back": true
+      },
+      {
+        "seq": 27,
+        "at_ms": 33,
+        "kind": "queued",
+        "request_id": "c23",
+        "reason": "no_worker_fit_or_deadline_safe_placement_now"
+      },
+      {
+        "seq": 29,
+        "at_ms": 35,
+        "kind": "admitted",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "worker": "a2",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 22,
+        "bound_units": 36,
+        "p95_ms": 40,
+        "finish_ms": 75,
+        "slack_ms": 10,
+        "active_on_worker": 0,
+        "own_reserved_units": 50,
+        "has_reservation_affinity": true,
+        "low_cost": false,
+        "reservation_slice": {
+          "reserved": 0,
+          "borrowed": 0,
+          "spare": 36
+        },
+        "promise": {
+          "at_ms": 35,
+          "request_id": "c23",
+          "attempt_no": 1,
+          "worker": "a2",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 22,
+          "bound_units": 36,
+          "slots": 1,
+          "p95_ms": 40,
+          "deadline_ms": 85,
+          "projected_finish_ms": 75,
+          "deadline_slack_ms": 10,
+          "reservation_slice": {
+            "reserved": 0,
+            "borrowed": 0,
+            "spare": 36
+          },
+          "prepared": false,
+          "note": null
+        }
+      },
+      {
+        "seq": 30,
+        "at_ms": 35,
+        "kind": "action",
+        "request_id": "c23",
+        "action_kind": "dispatch_attempt",
+        "attempt_no": 1,
+        "worker": "a2",
+        "pool": "main",
+        "variant": "full",
+        "bound_units": 36,
+        "is_probe": false
+      },
+      {
+        "seq": 31,
+        "at_ms": 39,
+        "kind": "feedback_timeout",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "worker": "a2",
+        "occurred_ms": 38,
+        "note": "observer timeout; a late first_chunk may still arrive"
+      },
+      {
+        "seq": 32,
+        "at_ms": 39,
+        "kind": "backup_prepared",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "worker": "b3",
+        "pool": "eco",
+        "variant": "small",
+        "estimated_units": 11,
+        "bound_units": 18,
+        "p95_ms": 12,
+        "finish_ms": 51,
+        "slack_ms": 34,
+        "active_on_worker": 0,
+        "own_reserved_units": 40,
+        "has_reservation_affinity": true,
+        "low_cost": true,
+        "reservation_slice": {
+          "reserved": 18,
+          "borrowed": 0,
+          "spare": 0
+        },
+        "promise": {
+          "at_ms": 39,
+          "request_id": "c23",
+          "attempt_no": 2,
+          "worker": "b3",
+          "pool": "eco",
+          "variant": "small",
+          "estimated_units": 11,
+          "bound_units": 18,
+          "slots": 1,
+          "p95_ms": 12,
+          "deadline_ms": 85,
+          "projected_finish_ms": 51,
+          "deadline_slack_ms": 34,
+          "reservation_slice": {
+            "reserved": 18,
+            "borrowed": 0,
+            "spare": 0
+          },
+          "prepared": true,
+          "note": null
+        }
+      },
+      {
+        "seq": 33,
+        "at_ms": 39,
+        "kind": "backup_prepared_because",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "caused_by": "timeout",
+        "delivery_gate": "blocked_until_old_attempt_confirmed_empty_and_closed"
+      },
+      {
+        "seq": 37,
+        "at_ms": 42,
+        "kind": "feedback_sink_closed_empty",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "repeated": false,
+        "occurred_ms": 41,
+        "egress_state": {
+          "key": "c23#1",
+          "request_id": "c23",
+          "attempt_no": 1,
+          "first_received": false,
+          "first_received_at_ms": null,
+          "first_occurred_at_ms": null,
+          "sink": "sink_closed_empty",
+          "stopped": true,
+          "empty": true,
+          "finished": false
+        }
+      },
+      {
+        "seq": 38,
+        "at_ms": 42,
+        "kind": "old_attempt_confirmed_empty_and_closed",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "decision": "prepared backup may now be launched and deliver"
+      },
+      {
+        "seq": 39,
+        "at_ms": 42,
+        "kind": "action",
+        "request_id": "c23",
+        "action_kind": "dispatch_prepared_backup",
+        "attempt_no": 2,
+        "worker": "b3",
+        "bound_units": 18,
+        "caused_by": "sink_closed_empty",
+        "delivery_gate_open": true
+      },
+      {
+        "seq": 40,
+        "at_ms": 42,
+        "kind": "backup_launched",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "caused_by": "sink_closed_empty"
+      },
+      {
+        "seq": 48,
+        "at_ms": 57,
+        "kind": "attempt_worker_mismatch",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "engine_worker": "b3",
+        "callback_worker": "b1",
+        "note": "feedback applied to logical attempt; scheduling diverged from feed"
+      },
+      {
+        "seq": 49,
+        "at_ms": 57,
+        "kind": "feedback_first_chunk",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "worker": "b1",
+        "occurred_ms": 56,
+        "late_relative_to_control_timeout": true,
+        "duplicate": false
+      },
+      {
+        "seq": 50,
+        "at_ms": 57,
+        "kind": "delivery_claimed_single_credible_result",
+        "request_id": "c23",
+        "delivered_via_attempt": 2,
+        "idempotency_key": "result:c23",
+        "caller_receipt_duplicate": false,
+        "model_locked": true
+      },
+      {
+        "seq": 51,
+        "at_ms": 57,
+        "kind": "action",
+        "request_id": "c23",
+        "action_kind": "cancel_shadow_backup",
+        "attempt_no": 1,
+        "worker": "a2",
+        "reason": "credible result arrived from another attempt"
+      },
+      {
+        "seq": 52,
+        "at_ms": 60,
+        "kind": "attempt_worker_mismatch",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "engine_worker": "b3",
+        "callback_worker": "b1",
+        "note": "feedback applied to logical attempt; scheduling diverged from feed"
+      },
+      {
+        "seq": 53,
+        "at_ms": 60,
+        "kind": "feedback_released",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "worker": "b1",
+        "occurred_ms": 59,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 11,
+        "loans_returned": []
+      },
+      {
+        "seq": 54,
+        "at_ms": 60,
+        "kind": "delivered_attempt_released_result_kept_locked",
+        "request_id": "c23",
+        "attempt_no": 2
+      },
+      {
+        "seq": 55,
+        "at_ms": 63,
+        "kind": "attempt_worker_mismatch",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "engine_worker": "b3",
+        "callback_worker": "b1",
+        "note": "feedback applied to logical attempt; scheduling diverged from feed"
+      },
+      {
+        "seq": 56,
+        "at_ms": 63,
+        "kind": "sink_receipt_after_release_kept_released",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "event": "sink_finished"
+      },
+      {
+        "seq": 57,
+        "at_ms": 63,
+        "kind": "feedback_sink_finished",
+        "request_id": "c23",
+        "attempt_no": 2,
+        "repeated": false,
+        "occurred_ms": 62,
+        "egress_state": {
+          "key": "c23#2",
+          "request_id": "c23",
+          "attempt_no": 2,
+          "first_received": true,
+          "first_received_at_ms": 57,
+          "first_occurred_at_ms": 56,
+          "sink": "sink_finished",
+          "stopped": true,
+          "empty": false,
+          "finished": true
+        }
+      },
+      {
+        "seq": 58,
+        "at_ms": 63,
+        "kind": "request_completed",
+        "request_id": "c23",
+        "attempt_no": 2
+      },
+      {
+        "seq": 59,
+        "at_ms": 66,
+        "kind": "feedback_released",
+        "request_id": "c23",
+        "attempt_no": 1,
+        "worker": "a2",
+        "occurred_ms": 54,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 22,
+        "loans_returned": []
+      }
+    ]
+  },
+  {
+    "request_id": "c24",
+    "found": true,
+    "status": "admitted",
+    "status_reason": null,
+    "tenant": "caption",
+    "deadline_ms": 149,
+    "submitted_at_ms": 78,
+    "allow_small": false,
+    "units": 45,
+    "units_ceiling": 59,
+    "delivered_attempt": null,
+    "admission_promises": [
+      {
+        "at_ms": 78,
+        "request_id": "c24",
+        "attempt_no": 1,
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 45,
+        "bound_units": 59,
+        "slots": 1,
+        "p95_ms": 38,
+        "deadline_ms": 149,
+        "projected_finish_ms": 116,
+        "deadline_slack_ms": 33,
+        "reservation_slice": {
+          "reserved": 50,
+          "borrowed": 8,
+          "spare": 1
+        },
+        "prepared": false,
+        "note": null
+      }
+    ],
+    "attempts": [
+      {
+        "key": "c24#1",
+        "request_id": "c24",
+        "attempt_no": 1,
+        "tenant": "caption",
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 45,
+        "bound_units": 59,
+        "status": "dispatched",
+        "observed_units": null,
+        "started_at_ms": null,
+        "dispatched_at_ms": 78,
+        "released_at_ms": null,
+        "release_observed_at_ms": null,
+        "prepared": false,
+        "is_probe": false,
+        "promise": {
+          "at_ms": 78,
+          "request_id": "c24",
+          "attempt_no": 1,
+          "worker": "a1",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 45,
+          "bound_units": 59,
+          "slots": 1,
+          "p95_ms": 38,
+          "deadline_ms": 149,
+          "projected_finish_ms": 116,
+          "deadline_slack_ms": 33,
+          "reservation_slice": {
+            "reserved": 50,
+            "borrowed": 8,
+            "spare": 1
+          },
+          "prepared": false,
+          "note": null
+        },
+        "slice": {
+          "reserved": 50,
+          "borrowed": 8,
+          "spare": 1
+        },
+        "charge_units": 45,
+        "holds_charge": true
+      }
+    ],
+    "egress": {},
+    "feedback_decisions": [],
+    "timeline": [
+      {
+        "seq": 60,
+        "at_ms": 78,
+        "kind": "submitted",
+        "request_id": "c24",
+        "tenant": "caption",
+        "units": 45,
+        "units_ceiling": 59,
+        "deadline_ms": 149,
+        "allow_small": false
+      },
+      {
+        "seq": 61,
+        "at_ms": 78,
+        "kind": "admitted",
+        "request_id": "c24",
+        "attempt_no": 1,
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 45,
+        "bound_units": 59,
+        "p95_ms": 38,
+        "finish_ms": 116,
+        "slack_ms": 33,
+        "active_on_worker": 0,
+        "own_reserved_units": 50,
+        "has_reservation_affinity": true,
+        "low_cost": false,
+        "reservation_slice": {
+          "reserved": 50,
+          "borrowed": 8,
+          "spare": 1
+        },
+        "promise": {
+          "at_ms": 78,
+          "request_id": "c24",
+          "attempt_no": 1,
+          "worker": "a1",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 45,
+          "bound_units": 59,
+          "slots": 1,
+          "p95_ms": 38,
+          "deadline_ms": 149,
+          "projected_finish_ms": 116,
+          "deadline_slack_ms": 33,
+          "reservation_slice": {
+            "reserved": 50,
+            "borrowed": 8,
+            "spare": 1
+          },
+          "prepared": false,
+          "note": null
+        }
+      },
+      {
+        "seq": 62,
+        "at_ms": 78,
+        "kind": "action",
+        "request_id": "c24",
+        "action_kind": "dispatch_attempt",
+        "attempt_no": 1,
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "bound_units": 59,
+        "is_probe": false
+      }
+    ]
+  },
+  {
+    "request_id": "r11",
+    "found": true,
+    "status": "admitted",
+    "status_reason": null,
+    "tenant": "review",
+    "deadline_ms": 90,
+    "submitted_at_ms": 0,
+    "allow_small": true,
+    "units": 43,
+    "units_ceiling": 57,
+    "delivered_attempt": null,
+    "admission_promises": [
+      {
+        "at_ms": 0,
+        "request_id": "r11",
+        "attempt_no": 1,
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 43,
+        "bound_units": 57,
+        "slots": 1,
+        "p95_ms": 38,
+        "deadline_ms": 90,
+        "projected_finish_ms": 38,
+        "deadline_slack_ms": 52,
+        "reservation_slice": {
+          "reserved": 8,
+          "borrowed": 49,
+          "spare": 0
+        },
+        "prepared": false,
+        "note": null
+      },
+      {
+        "at_ms": 43,
+        "request_id": "r11",
+        "attempt_no": 2,
+        "worker": "b1",
+        "pool": "fallback",
+        "variant": "small",
+        "estimated_units": 22,
+        "bound_units": 29,
+        "slots": 1,
+        "p95_ms": 17,
+        "deadline_ms": 90,
+        "projected_finish_ms": 60,
+        "deadline_slack_ms": 30,
+        "reservation_slice": {
+          "reserved": 0,
+          "borrowed": 19,
+          "spare": 10
+        },
+        "prepared": false,
+        "note": null
+      }
+    ],
+    "attempts": [
+      {
+        "key": "r11#1",
+        "request_id": "r11",
+        "attempt_no": 1,
+        "tenant": "review",
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 43,
+        "bound_units": 57,
+        "status": "released",
+        "observed_units": 54,
+        "started_at_ms": 6,
+        "dispatched_at_ms": 0,
+        "released_at_ms": 40,
+        "release_observed_at_ms": 43,
+        "prepared": false,
+        "is_probe": false,
+        "promise": {
+          "at_ms": 0,
+          "request_id": "r11",
+          "attempt_no": 1,
+          "worker": "a1",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 43,
+          "bound_units": 57,
+          "slots": 1,
+          "p95_ms": 38,
+          "deadline_ms": 90,
+          "projected_finish_ms": 38,
+          "deadline_slack_ms": 52,
+          "reservation_slice": {
+            "reserved": 8,
+            "borrowed": 49,
+            "spare": 0
+          },
+          "prepared": false,
+          "note": null
+        },
+        "slice": {
+          "reserved": 8,
+          "borrowed": 49,
+          "spare": 0
+        },
+        "charge_units": 54,
+        "holds_charge": false
+      },
+      {
+        "key": "r11#2",
+        "request_id": "r11",
+        "attempt_no": 2,
+        "tenant": "review",
+        "worker": "b1",
+        "pool": "fallback",
+        "variant": "small",
+        "estimated_units": 22,
+        "bound_units": 29,
+        "status": "node_down",
+        "observed_units": null,
+        "started_at_ms": null,
+        "dispatched_at_ms": 43,
+        "released_at_ms": null,
+        "release_observed_at_ms": null,
+        "prepared": false,
+        "is_probe": false,
+        "promise": {
+          "at_ms": 43,
+          "request_id": "r11",
+          "attempt_no": 2,
+          "worker": "b1",
+          "pool": "fallback",
+          "variant": "small",
+          "estimated_units": 22,
+          "bound_units": 29,
+          "slots": 1,
+          "p95_ms": 17,
+          "deadline_ms": 90,
+          "projected_finish_ms": 60,
+          "deadline_slack_ms": 30,
+          "reservation_slice": {
+            "reserved": 0,
+            "borrowed": 19,
+            "spare": 10
+          },
+          "prepared": false,
+          "note": null
+        },
+        "slice": {
+          "reserved": 0,
+          "borrowed": 19,
+          "spare": 10
+        },
+        "charge_units": 22,
+        "holds_charge": true
+      }
+    ],
+    "egress": {},
+    "feedback_decisions": [
+      {
+        "seq": 7,
+        "at_ms": 6,
+        "kind": "feedback_started",
+        "request_id": "r11",
+        "attempt_no": 1,
+        "worker": "a1",
+        "units": 43,
+        "occurred_ms": 6
+      },
+      {
+        "seq": 13,
+        "at_ms": 19,
+        "kind": "feedback_usage",
+        "request_id": "r11",
+        "attempt_no": 1,
+        "worker": "a1",
+        "old_charge_units": 43,
+        "actual_units": 54,
+        "bound_units": 57,
+        "occurred_ms": 17,
+        "changed": "actual occupancy corrected; bound stays reserved until released"
+      },
+      {
+        "seq": 41,
+        "at_ms": 43,
+        "kind": "feedback_released",
+        "request_id": "r11",
+        "attempt_no": 1,
+        "worker": "a1",
+        "occurred_ms": 40,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 54,
+        "loans_returned": [
+          {
+            "key": "loan:r11#1:caption",
+            "lender": "caption",
+            "borrower": "review",
+            "pool": "main",
+            "model_family": "text",
+            "units": 49,
+            "attempt_key": "r11#1",
+            "created_at_ms": 0,
+            "reclaim_deadline_ms": 26,
+            "reclaim_requested_at_ms": null,
+            "returned_at_ms": 43,
+            "met_deadline": false
+          }
+        ]
+      },
+      {
+        "seq": 44,
+        "at_ms": 43,
+        "kind": "retry_after_release",
+        "request_id": "r11",
+        "caused_by": "released_without_delivery"
+      }
+    ],
+    "timeline": [
+      {
+        "seq": 1,
+        "at_ms": 0,
+        "kind": "submitted",
+        "request_id": "r11",
+        "tenant": "review",
+        "units": 43,
+        "units_ceiling": 57,
+        "deadline_ms": 90,
+        "allow_small": true
+      },
+      {
+        "seq": 2,
+        "at_ms": 0,
+        "kind": "admitted",
+        "request_id": "r11",
+        "attempt_no": 1,
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 43,
+        "bound_units": 57,
+        "p95_ms": 38,
+        "finish_ms": 38,
+        "slack_ms": 52,
+        "active_on_worker": 0,
+        "own_reserved_units": 8,
+        "has_reservation_affinity": true,
+        "low_cost": false,
+        "reservation_slice": {
+          "reserved": 8,
+          "borrowed": 49,
+          "spare": 0
+        },
+        "promise": {
+          "at_ms": 0,
+          "request_id": "r11",
+          "attempt_no": 1,
+          "worker": "a1",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 43,
+          "bound_units": 57,
+          "slots": 1,
+          "p95_ms": 38,
+          "deadline_ms": 90,
+          "projected_finish_ms": 38,
+          "deadline_slack_ms": 52,
+          "reservation_slice": {
+            "reserved": 8,
+            "borrowed": 49,
+            "spare": 0
+          },
+          "prepared": false,
+          "note": null
+        }
+      },
+      {
+        "seq": 3,
+        "at_ms": 0,
+        "kind": "action",
+        "request_id": "r11",
+        "action_kind": "dispatch_attempt",
+        "attempt_no": 1,
+        "worker": "a1",
+        "pool": "main",
+        "variant": "full",
+        "bound_units": 57,
+        "is_probe": false
+      },
+      {
+        "seq": 7,
+        "at_ms": 6,
+        "kind": "feedback_started",
+        "request_id": "r11",
+        "attempt_no": 1,
+        "worker": "a1",
+        "units": 43,
+        "occurred_ms": 6
+      },
+      {
+        "seq": 13,
+        "at_ms": 19,
+        "kind": "feedback_usage",
+        "request_id": "r11",
+        "attempt_no": 1,
+        "worker": "a1",
+        "old_charge_units": 43,
+        "actual_units": 54,
+        "bound_units": 57,
+        "occurred_ms": 17,
+        "changed": "actual occupancy corrected; bound stays reserved until released"
+      },
+      {
+        "seq": 41,
+        "at_ms": 43,
+        "kind": "feedback_released",
+        "request_id": "r11",
+        "attempt_no": 1,
+        "worker": "a1",
+        "occurred_ms": 40,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 54,
+        "loans_returned": [
+          {
+            "key": "loan:r11#1:caption",
+            "lender": "caption",
+            "borrower": "review",
+            "pool": "main",
+            "model_family": "text",
+            "units": 49,
+            "attempt_key": "r11#1",
+            "created_at_ms": 0,
+            "reclaim_deadline_ms": 26,
+            "reclaim_requested_at_ms": null,
+            "returned_at_ms": 43,
+            "met_deadline": false
+          }
+        ]
+      },
+      {
+        "seq": 42,
+        "at_ms": 43,
+        "kind": "admitted",
+        "request_id": "r11",
+        "attempt_no": 2,
+        "worker": "b1",
+        "pool": "fallback",
+        "variant": "small",
+        "estimated_units": 22,
+        "bound_units": 29,
+        "p95_ms": 17,
+        "finish_ms": 60,
+        "slack_ms": 30,
+        "active_on_worker": 1,
+        "own_reserved_units": 8,
+        "has_reservation_affinity": true,
+        "low_cost": true,
+        "reservation_slice": {
+          "reserved": 0,
+          "borrowed": 19,
+          "spare": 10
+        },
+        "promise": {
+          "at_ms": 43,
+          "request_id": "r11",
+          "attempt_no": 2,
+          "worker": "b1",
+          "pool": "fallback",
+          "variant": "small",
+          "estimated_units": 22,
+          "bound_units": 29,
+          "slots": 1,
+          "p95_ms": 17,
+          "deadline_ms": 90,
+          "projected_finish_ms": 60,
+          "deadline_slack_ms": 30,
+          "reservation_slice": {
+            "reserved": 0,
+            "borrowed": 19,
+            "spare": 10
+          },
+          "prepared": false,
+          "note": null
+        }
+      },
+      {
+        "seq": 43,
+        "at_ms": 43,
+        "kind": "action",
+        "request_id": "r11",
+        "action_kind": "dispatch_attempt",
+        "attempt_no": 2,
+        "worker": "b1",
+        "pool": "fallback",
+        "variant": "small",
+        "bound_units": 29,
+        "is_probe": false
+      },
+      {
+        "seq": 44,
+        "at_ms": 43,
+        "kind": "retry_after_release",
+        "request_id": "r11",
+        "caused_by": "released_without_delivery"
+      }
+    ]
+  },
+  {
+    "request_id": "r12",
+    "found": true,
+    "status": "cancelled",
+    "status_reason": "caller_cancelled",
+    "tenant": "review",
+    "deadline_ms": 109,
+    "submitted_at_ms": 3,
+    "allow_small": true,
+    "units": 31,
+    "units_ceiling": 45,
+    "delivered_attempt": null,
+    "admission_promises": [
+      {
+        "at_ms": 3,
+        "request_id": "r12",
+        "attempt_no": 1,
+        "worker": "a2",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 31,
+        "bound_units": 45,
+        "slots": 1,
+        "p95_ms": 40,
+        "deadline_ms": 109,
+        "projected_finish_ms": 43,
+        "deadline_slack_ms": 66,
+        "reservation_slice": {
+          "reserved": 0,
+          "borrowed": 1,
+          "spare": 44
+        },
+        "prepared": false,
+        "note": null
+      }
+    ],
+    "attempts": [
+      {
+        "key": "r12#1",
+        "request_id": "r12",
+        "attempt_no": 1,
+        "tenant": "review",
+        "worker": "a2",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 31,
+        "bound_units": 45,
+        "status": "released",
+        "observed_units": null,
+        "started_at_ms": null,
+        "dispatched_at_ms": 3,
+        "released_at_ms": 30,
+        "release_observed_at_ms": 35,
+        "prepared": false,
+        "is_probe": false,
+        "promise": {
+          "at_ms": 3,
+          "request_id": "r12",
+          "attempt_no": 1,
+          "worker": "a2",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 31,
+          "bound_units": 45,
+          "slots": 1,
+          "p95_ms": 40,
+          "deadline_ms": 109,
+          "projected_finish_ms": 43,
+          "deadline_slack_ms": 66,
+          "reservation_slice": {
+            "reserved": 0,
+            "borrowed": 1,
+            "spare": 44
+          },
+          "prepared": false,
+          "note": null
+        },
+        "slice": {
+          "reserved": 0,
+          "borrowed": 1,
+          "spare": 44
+        },
+        "charge_units": 31,
+        "holds_charge": false
+      }
+    ],
+    "egress": {},
+    "feedback_decisions": [
+      {
+        "seq": 28,
+        "at_ms": 35,
+        "kind": "feedback_released",
+        "request_id": "r12",
+        "attempt_no": 1,
+        "worker": "a2",
+        "occurred_ms": 30,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 31,
+        "loans_returned": [
+          {
+            "key": "loan:r12#1:caption",
+            "lender": "caption",
+            "borrower": "review",
+            "pool": "main",
+            "model_family": "text",
+            "units": 1,
+            "attempt_key": "r12#1",
+            "created_at_ms": 3,
+            "reclaim_deadline_ms": 29,
+            "reclaim_requested_at_ms": null,
+            "returned_at_ms": 35,
+            "met_deadline": false
+          }
+        ]
+      }
+    ],
+    "timeline": [
+      {
+        "seq": 4,
+        "at_ms": 3,
+        "kind": "submitted",
+        "request_id": "r12",
+        "tenant": "review",
+        "units": 31,
+        "units_ceiling": 45,
+        "deadline_ms": 109,
+        "allow_small": true
+      },
+      {
+        "seq": 5,
+        "at_ms": 3,
+        "kind": "admitted",
+        "request_id": "r12",
+        "attempt_no": 1,
+        "worker": "a2",
+        "pool": "main",
+        "variant": "full",
+        "estimated_units": 31,
+        "bound_units": 45,
+        "p95_ms": 40,
+        "finish_ms": 43,
+        "slack_ms": 66,
+        "active_on_worker": 0,
+        "own_reserved_units": 8,
+        "has_reservation_affinity": true,
+        "low_cost": false,
+        "reservation_slice": {
+          "reserved": 0,
+          "borrowed": 1,
+          "spare": 44
+        },
+        "promise": {
+          "at_ms": 3,
+          "request_id": "r12",
+          "attempt_no": 1,
+          "worker": "a2",
+          "pool": "main",
+          "variant": "full",
+          "estimated_units": 31,
+          "bound_units": 45,
+          "slots": 1,
+          "p95_ms": 40,
+          "deadline_ms": 109,
+          "projected_finish_ms": 43,
+          "deadline_slack_ms": 66,
+          "reservation_slice": {
+            "reserved": 0,
+            "borrowed": 1,
+            "spare": 44
+          },
+          "prepared": false,
+          "note": null
+        }
+      },
+      {
+        "seq": 6,
+        "at_ms": 3,
+        "kind": "action",
+        "request_id": "r12",
+        "action_kind": "dispatch_attempt",
+        "attempt_no": 1,
+        "worker": "a2",
+        "pool": "main",
+        "variant": "full",
+        "bound_units": 45,
+        "is_probe": false
+      },
+      {
+        "seq": 15,
+        "at_ms": 24,
+        "kind": "cancelled",
+        "request_id": "r12"
+      },
+      {
+        "seq": 16,
+        "at_ms": 24,
+        "kind": "action",
+        "request_id": "r12",
+        "action_kind": "cancel_attempt",
+        "attempt_no": 1,
+        "worker": "a2",
+        "attempt_key": "r12#1"
+      },
+      {
+        "seq": 17,
+        "at_ms": 24,
+        "kind": "cancel_occupancy_awaiting_released",
+        "request_id": "r12",
+        "held_keys": [
+          "r12#1"
+        ]
+      },
+      {
+        "seq": 28,
+        "at_ms": 35,
+        "kind": "feedback_released",
+        "request_id": "r12",
+        "attempt_no": 1,
+        "worker": "a2",
+        "occurred_ms": 30,
+        "capacity_actually_freed": true,
+        "freed_observed_units": 31,
+        "loans_returned": [
+          {
+            "key": "loan:r12#1:caption",
+            "lender": "caption",
+            "borrower": "review",
+            "pool": "main",
+            "model_family": "text",
+            "units": 1,
+            "attempt_key": "r12#1",
+            "created_at_ms": 3,
+            "reclaim_deadline_ms": 29,
+            "reclaim_requested_at_ms": null,
+            "returned_at_ms": 35,
+            "met_deadline": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "request_id": "r13",
+    "found": true,
+    "status": "admitted",
+    "status_reason": null,
+    "tenant": "review",
+    "deadline_ms": 120,
+    "submitted_at_ms": 41,
+    "allow_small": true,
+    "units": 20,
+    "units_ceiling": 34,
+    "delivered_attempt": null,
+    "admission_promises": [
+      {
+        "at_ms": 41,
+        "request_id": "r13",
+        "attempt_no": 1,
+        "worker": "b1",
+        "pool": "fallback",
+        "variant": "small",
+        "estimated_units": 10,
+        "bound_units": 17,
+        "slots": 1,
+        "p95_ms": 17,
+        "deadline_ms": 120,
+        "projected_finish_ms": 58,
+        "deadline_slack_ms": 62,
+        "reservation_slice": {
+          "reserved": 8,
+          "borrowed": 9,
+          "spare": 0
+        },
+        "prepared": false,
+        "note": null
+      }
+    ],
+    "attempts": [
+      {
+        "key": "r13#1",
+        "request_id": "r13",
+        "attempt_no": 1,
+        "tenant": "review",
+        "worker": "b1",
+        "pool": "fallback",
+        "variant": "small",
+        "estimated_units": 10,
+        "bound_units": 17,
+        "status": "node_down",
+        "observed_units": null,
+        "started_at_ms": null,
+        "dispatched_at_ms": 41,
+        "released_at_ms": null,
+        "release_observed_at_ms": null,
+        "prepared": false,
+        "is_probe": false,
+        "promise": {
+          "at_ms": 41,
+          "request_id": "r13",
+          "attempt_no": 1,
+          "worker": "b1",
+          "pool": "fallback",
+          "variant": "small",
+          "estimated_units": 10,
+          "bound_units": 17,
+          "slots": 1,
+          "p95_ms": 17,
+          "deadline_ms": 120,
+          "projected_finish_ms": 58,
+          "deadline_slack_ms": 62,
+          "reservation_slice": {
+            "reserved": 8,
+            "borrowed": 9,
+            "spare": 0
+          },
+          "prepared": false,
+          "note": null
+        },
+        "slice": {
+          "reserved": 8,
+          "borrowed": 9,
+          "spare": 0
+        },
+        "charge_units": 10,
+        "holds_charge": true
+      }
+    ],
+    "egress": {},
+    "feedback_decisions": [],
+    "timeline": [
+      {
+        "seq": 34,
+        "at_ms": 41,
+        "kind": "submitted",
+        "request_id": "r13",
+        "tenant": "review",
+        "units": 20,
+        "units_ceiling": 34,
+        "deadline_ms": 120,
+        "allow_small": true
+      },
+      {
+        "seq": 35,
+        "at_ms": 41,
+        "kind": "admitted",
+        "request_id": "r13",
+        "attempt_no": 1,
+        "worker": "b1",
+        "pool": "fallback",
+        "variant": "small",
+        "estimated_units": 10,
+        "bound_units": 17,
+        "p95_ms": 17,
+        "finish_ms": 58,
+        "slack_ms": 62,
+        "active_on_worker": 0,
+        "own_reserved_units": 8,
+        "has_reservation_affinity": true,
+        "low_cost": true,
+        "reservation_slice": {
+          "reserved": 8,
+          "borrowed": 9,
+          "spare": 0
+        },
+        "promise": {
+          "at_ms": 41,
+          "request_id": "r13",
+          "attempt_no": 1,
+          "worker": "b1",
+          "pool": "fallback",
+          "variant": "small",
+          "estimated_units": 10,
+          "bound_units": 17,
+          "slots": 1,
+          "p95_ms": 17,
+          "deadline_ms": 120,
+          "projected_finish_ms": 58,
+          "deadline_slack_ms": 62,
+          "reservation_slice": {
+            "reserved": 8,
+            "borrowed": 9,
+            "spare": 0
+          },
+          "prepared": false,
+          "note": null
+        }
+      },
+      {
+        "seq": 36,
+        "at_ms": 41,
+        "kind": "action",
+        "request_id": "r13",
+        "action_kind": "dispatch_attempt",
+        "attempt_no": 1,
+        "worker": "b1",
+        "pool": "fallback",
+        "variant": "small",
+        "bound_units": 17,
+        "is_probe": false
+      }
+    ]
+  }
+]

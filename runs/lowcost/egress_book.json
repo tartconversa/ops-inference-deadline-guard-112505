@@ -1,0 +1,108 @@
+{
+  "connected": true,
+  "attempts": {
+    "c21#1": {
+      "key": "c21#1",
+      "request_id": "c21",
+      "attempt_no": 1,
+      "first_received": true,
+      "first_received_at_ms": 31,
+      "first_occurred_at_ms": 22,
+      "sink": null,
+      "stopped": false,
+      "empty": false,
+      "finished": false
+    },
+    "c23#1": {
+      "key": "c23#1",
+      "request_id": "c23",
+      "attempt_no": 1,
+      "first_received": false,
+      "first_received_at_ms": null,
+      "first_occurred_at_ms": null,
+      "sink": "sink_closed_empty",
+      "stopped": true,
+      "empty": true,
+      "finished": false
+    },
+    "c23#2": {
+      "key": "c23#2",
+      "request_id": "c23",
+      "attempt_no": 2,
+      "first_received": true,
+      "first_received_at_ms": 57,
+      "first_occurred_at_ms": 56,
+      "sink": "sink_finished",
+      "stopped": true,
+      "empty": false,
+      "finished": true
+    }
+  },
+  "outbox": {
+    "result:c21": {
+      "idempotency_key": "result:c21",
+      "at_ms": 31,
+      "connected": true,
+      "acked": true,
+      "kind": "result_claim",
+      "request_id": "c21",
+      "attempt_no": 1,
+      "worker": "a1",
+      "variant": "full"
+    },
+    "result:c23": {
+      "idempotency_key": "result:c23",
+      "at_ms": 57,
+      "connected": true,
+      "acked": true,
+      "kind": "result_claim",
+      "request_id": "c23",
+      "attempt_no": 2,
+      "worker": "b1",
+      "variant": "small"
+    },
+    "result:c23:finished": {
+      "idempotency_key": "result:c23:finished",
+      "at_ms": 63,
+      "connected": true,
+      "acked": true,
+      "kind": "result_finished",
+      "request_id": "c23",
+      "attempt_no": 2
+    }
+  },
+  "deliveries": [
+    {
+      "idempotency_key": "result:c21",
+      "at_ms": 31,
+      "connected": true,
+      "acked": true,
+      "kind": "result_claim",
+      "request_id": "c21",
+      "attempt_no": 1,
+      "worker": "a1",
+      "variant": "full"
+    },
+    {
+      "idempotency_key": "result:c23",
+      "at_ms": 57,
+      "connected": true,
+      "acked": true,
+      "kind": "result_claim",
+      "request_id": "c23",
+      "attempt_no": 2,
+      "worker": "b1",
+      "variant": "small"
+    },
+    {
+      "idempotency_key": "result:c23:finished",
+      "at_ms": 63,
+      "connected": true,
+      "acked": true,
+      "kind": "result_finished",
+      "request_id": "c23",
+      "attempt_no": 2
+    }
+  ],
+  "pending_acks": []
+}

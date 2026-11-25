@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "clock_ms": 83,
+  "repairs": [],
+  "mismatches": [],
+  "duplicate_idempotency_keys": [],
+  "multiple_first_chunks": {},
+  "awaiting_actual_release": [
+    {
+      "attempt_key": "r13#1",
+      "request_id": "r13",
+      "tenant": "review",
+      "worker": "b2",
+      "status": "dispatched",
+      "bound_units": 17
+    },
+    {
+      "attempt_key": "r11#2",
+      "request_id": "r11",
+      "tenant": "review",
+      "worker": "b1",
+      "status": "node_down",
+      "bound_units": 29
+    },
+    {
+      "attempt_key": "c24#1",
+      "request_id": "c24",
+      "tenant": "caption",
+      "worker": "a1",
+      "status": "dispatched",
+      "bound_units": 59
+    }
+  ],
+  "awaiting_count": 3,
+  "outbox_size": 3
+}

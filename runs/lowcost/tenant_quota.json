@@ -1,0 +1,119 @@
+[
+  {
+    "tenant": "caption",
+    "pool": "eco",
+    "model_family": "text",
+    "at_ms": 83,
+    "reserved_units": 40,
+    "live_bound_units": 0,
+    "idle_reserved_units": 40,
+    "active_loans_as_borrower": [],
+    "active_loans_as_lender": []
+  },
+  {
+    "tenant": "caption",
+    "pool": "fallback",
+    "model_family": "text",
+    "at_ms": 83,
+    "reserved_units": 28,
+    "live_bound_units": 0,
+    "idle_reserved_units": 28,
+    "active_loans_as_borrower": [],
+    "active_loans_as_lender": [
+      {
+        "key": "loan:r13#1:caption",
+        "lender": "caption",
+        "borrower": "review",
+        "pool": "fallback",
+        "model_family": "text",
+        "units": 9,
+        "attempt_key": "r13#1",
+        "created_at_ms": 41,
+        "reclaim_deadline_ms": 59,
+        "reclaim_requested_at_ms": null,
+        "returned_at_ms": null,
+        "met_deadline": null
+      },
+      {
+        "key": "loan:r11#2:caption",
+        "lender": "caption",
+        "borrower": "review",
+        "pool": "fallback",
+        "model_family": "text",
+        "units": 19,
+        "attempt_key": "r11#2",
+        "created_at_ms": 43,
+        "reclaim_deadline_ms": 61,
+        "reclaim_requested_at_ms": null,
+        "returned_at_ms": null,
+        "met_deadline": null
+      }
+    ]
+  },
+  {
+    "tenant": "caption",
+    "pool": "main",
+    "model_family": "text",
+    "at_ms": 83,
+    "reserved_units": 38,
+    "live_bound_units": 59,
+    "idle_reserved_units": 0,
+    "active_loans_as_borrower": [
+      {
+        "key": "loan:c24#1:review",
+        "lender": "review",
+        "borrower": "caption",
+        "pool": "main",
+        "model_family": "text",
+        "units": 8,
+        "attempt_key": "c24#1",
+        "created_at_ms": 78,
+        "reclaim_deadline_ms": 104,
+        "reclaim_requested_at_ms": null,
+        "returned_at_ms": null,
+        "met_deadline": null
+      }
+    ],
+    "active_loans_as_lender": []
+  },
+  {
+    "tenant": "review",
+    "pool": "fallback",
+    "model_family": "text",
+    "at_ms": 83,
+    "reserved_units": 8,
+    "live_bound_units": 46,
+    "idle_reserved_units": 0,
+    "active_loans_as_borrower": [
+      {
+        "key": "loan:r13#1:caption",
+        "lender": "caption",
+        "borrower": "review",
+        "pool": "fallback",
+        "model_family": "text",
+        "units": 9,
+        "attempt_key": "r13#1",
+        "created_at_ms": 41,
+        "reclaim_deadline_ms": 59,
+        "reclaim_requested_at_ms": null,
+        "returned_at_ms": null,
+        "met_deadline": null
+      },
+      {
+        "key": "loan:r11#2:caption",
+        "lender": "caption",
+        "borrower": "review",
+        "pool": "fallback",
+        "model_family": "text",
+        "units": 19,
+        "attempt_key": "r11#2",
+        "created_at_ms": 43,
+        "reclaim_deadline_ms": 61,
+        "reclaim_requested_at_ms": null,
+        "returned_at_ms": null,
+        "met_deadline": null
+      }
+    ],
+    "active_loans_as_lender": []
+  }
+]

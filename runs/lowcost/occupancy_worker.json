@@ -1,0 +1,150 @@
+{
+  "by": "worker",
+  "at_ms": 83,
+  "groups": {
+    "a1": {
+      "name": "a1",
+      "live_attempts": 1,
+      "working_attempts": 1,
+      "unresolved_attempts": 0,
+      "probe_attempts": 0,
+      "bound_units": 59,
+      "observed_units": 45,
+      "slots_used": 1,
+      "work_capacity": 110,
+      "slots_capacity": 2,
+      "up": true,
+      "attempts": [
+        {
+          "key": "c24#1",
+          "request_id": "c24",
+          "attempt_no": 1,
+          "tenant": "caption",
+          "worker": "a1",
+          "status": "dispatched",
+          "bound_units": 59,
+          "observed_units": 45,
+          "is_probe": false
+        }
+      ],
+      "pool": "main",
+      "variant": "full",
+      "bound_utilization": 0.5364
+    },
+    "a2": {
+      "name": "a2",
+      "live_attempts": 0,
+      "working_attempts": 0,
+      "unresolved_attempts": 0,
+      "probe_attempts": 0,
+      "bound_units": 0,
+      "observed_units": 0,
+      "slots_used": 0,
+      "work_capacity": 64,
+      "slots_capacity": 1,
+      "up": true,
+      "attempts": [],
+      "pool": "main",
+      "variant": "full",
+      "bound_utilization": 0.0
+    },
+    "b1": {
+      "name": "b1",
+      "live_attempts": 2,
+      "working_attempts": 0,
+      "unresolved_attempts": 2,
+      "probe_attempts": 0,
+      "bound_units": 46,
+      "observed_units": 32,
+      "slots_used": 2,
+      "work_capacity": 56,
+      "slots_capacity": 2,
+      "up": false,
+      "attempts": [
+        {
+          "key": "r13#1",
+          "request_id": "r13",
+          "attempt_no": 1,
+          "tenant": "review",
+          "worker": "b1",
+          "status": "node_down",
+          "bound_units": 17,
+          "observed_units": 10,
+          "is_probe": false
+        },
+        {
+          "key": "r11#2",
+          "request_id": "r11",
+          "attempt_no": 2,
+          "tenant": "review",
+          "worker": "b1",
+          "status": "node_down",
+          "bound_units": 29,
+          "observed_units": 22,
+          "is_probe": false
+        }
+      ],
+      "pool": "fallback",
+      "variant": "small",
+      "bound_utilization": 0.8214
+    },
+    "b2": {
+      "name": "b2",
+      "live_attempts": 0,
+      "working_attempts": 0,
+      "unresolved_attempts": 0,
+      "probe_attempts": 0,
+      "bound_units": 0,
+      "observed_units": 0,
+      "slots_used": 0,
+      "work_capacity": 24,
+      "slots_capacity": 1,
+      "up": true,
+      "attempts": [],
+      "pool": "fallback",
+      "variant": "small",
+      "bound_utilization": 0.0
+    },
+    "b3": {
+      "name": "b3",
+      "live_attempts": 0,
+      "working_attempts": 0,
+      "unresolved_attempts": 0,
+      "probe_attempts": 0,
+      "bound_units": 0,
+      "observed_units": 0,
+      "slots_used": 0,
+      "work_capacity": 60,
+      "slots_capacity": 4,
+      "up": true,
+      "attempts": [],
+      "pool": "eco",
+      "variant": "small",
+      "bound_utilization": 0.0
+    }
+  },
+  "clock_ms": 83,
+  "live_charge_keys": [
+    "c24#1",
+    "r11#2",
+    "r13#1"
+  ],
+  "requests_with_live_charges": [
+    "c24",
+    "r11",
+    "r13"
+  ],
+  "ended_user_requests": [
+    "c21",
+    "c22",
+    "c23",
+    "r12"
+  ],
+  "request_status_counts": {
+    "admitted": 3,
+    "cancelled": 1,
+    "delivered": 1,
+    "rejected": 1,
+    "completed": 1
+  }
+}

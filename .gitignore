@@ -10,3 +10,8 @@ coverage/
 __pycache__/
 *.py[cod]
 .DS_Store
+
+# 演练运行产物（可用 CLI 重新生成）
+runs/
+state/
+*.local.jsonl

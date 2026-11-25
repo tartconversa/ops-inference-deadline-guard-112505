@@ -1,0 +1,136 @@
+{
+  "name": "reserved-low-cost-pool",
+  "fleet": [
+    {
+      "worker": "a1",
+      "pool": "main",
+      "slots": 2,
+      "work_capacity": 110,
+      "variant": "full",
+      "p95_ms": 38,
+      "return_ms": 26,
+      "up": true,
+      "down_at_ms": 26,
+      "up_at_ms": 50
+    },
+    {
+      "worker": "a2",
+      "pool": "main",
+      "slots": 1,
+      "work_capacity": 64,
+      "variant": "full",
+      "p95_ms": 40,
+      "return_ms": 26,
+      "up": true,
+      "down_at_ms": null,
+      "up_at_ms": null
+    },
+    {
+      "worker": "b1",
+      "pool": "fallback",
+      "slots": 2,
+      "work_capacity": 56,
+      "variant": "small",
+      "p95_ms": 17,
+      "return_ms": 18,
+      "up": false,
+      "down_at_ms": 83,
+      "up_at_ms": null
+    },
+    {
+      "worker": "b2",
+      "pool": "fallback",
+      "slots": 1,
+      "work_capacity": 24,
+      "variant": "small",
+      "p95_ms": 23,
+      "return_ms": 18,
+      "up": true,
+      "down_at_ms": null,
+      "up_at_ms": null
+    },
+    {
+      "worker": "b3",
+      "pool": "eco",
+      "slots": 4,
+      "work_capacity": 60,
+      "variant": "small",
+      "p95_ms": 12,
+      "return_ms": 18,
+      "up": true,
+      "down_at_ms": null,
+      "up_at_ms": null
+    }
+  ],
+  "reservations": [
+    {
+      "tenant": "caption",
+      "pool": "main",
+      "model_family": "text",
+      "start_ms": 0,
+      "end_ms": 80,
+      "units": 50
+    },
+    {
+      "tenant": "caption",
+      "pool": "fallback",
+      "model_family": "text",
+      "start_ms": 0,
+      "end_ms": 100,
+      "units": 28
+    },
+    {
+      "tenant": "caption",
+      "pool": "main",
+      "model_family": "text",
+      "start_ms": 80,
+      "end_ms": 200,
+      "units": 38
+    },
+    {
+      "tenant": "review",
+      "pool": "main",
+      "model_family": "text",
+      "start_ms": 0,
+      "end_ms": 80,
+      "units": 8
+    },
+    {
+      "tenant": "review",
+      "pool": "fallback",
+      "model_family": "text",
+      "start_ms": 0,
+      "end_ms": 120,
+      "units": 8
+    },
+    {
+      "tenant": "caption",
+      "pool": "eco",
+      "model_family": "text",
+      "start_ms": 0,
+      "end_ms": 200,
+      "units": 40
+    }
+  ],
+  "policy": {
+    "reserve_ceiling": true,
+    "deadline_check": true,
+    "downgrade_mode": "deadline",
+    "deadline_strict": false,
+    "auto_reject_late": true,
+    "prepare_backup_on_timeout": true,
+    "launch_backup_after_empty_close": true,
+    "preempt_borrowers": true,
+    "probe_on_up": false,
+    "probe_units": 1,
+    "probe_slots": 1,
+    "max_attempts": 3,
+    "lend_idle_reservation": true,
+    "reservation_is_hard_cap": false,
+    "low_cost_variant": "small",
+    "low_cost_pools": [
+      "eco"
+    ],
+    "prefer_reserved_pool": true
+  }
+}
