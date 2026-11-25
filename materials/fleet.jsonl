@@ -1,0 +1,4 @@
+{"worker":"a1","pool":"main","slots":2,"work_capacity":80,"variant":"full","p95_ms":38,"return_ms":26}
+{"worker":"a2","pool":"main","slots":1,"work_capacity":64,"variant":"full","p95_ms":40,"return_ms":26}
+{"worker":"b1","pool":"fallback","slots":2,"work_capacity":56,"variant":"small","p95_ms":17,"return_ms":18}
+{"worker":"b2","pool":"fallback","slots":1,"work_capacity":24,"variant":"small","p95_ms":23,"return_ms":18}

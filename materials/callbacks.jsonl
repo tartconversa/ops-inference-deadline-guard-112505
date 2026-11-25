@@ -1,0 +1,16 @@
+{"at_ms":6,"occurred_ms":6,"worker":"a1","request_id":"r11","attempt_no":1,"event":"started","units":43}
+{"at_ms":19,"occurred_ms":17,"worker":"a1","request_id":"r11","attempt_no":1,"event":"usage","units":54}
+{"at_ms":26,"occurred_ms":26,"worker":"a1","request_id":null,"attempt_no":null,"event":"node_down","units":null}
+{"at_ms":28,"occurred_ms":27,"worker":"a1","request_id":"c21","attempt_no":1,"event":"timeout","units":null}
+{"at_ms":31,"occurred_ms":22,"worker":"a1","request_id":"c21","attempt_no":1,"event":"first_chunk","units":null}
+{"at_ms":35,"occurred_ms":30,"worker":"a2","request_id":"r12","attempt_no":1,"event":"released","units":null}
+{"at_ms":39,"occurred_ms":38,"worker":"a2","request_id":"c23","attempt_no":1,"event":"timeout","units":null}
+{"at_ms":42,"occurred_ms":41,"worker":"a2","request_id":"c23","attempt_no":1,"event":"sink_closed_empty","units":null}
+{"at_ms":43,"occurred_ms":40,"worker":"a1","request_id":"r11","attempt_no":1,"event":"released","units":null}
+{"at_ms":49,"occurred_ms":42,"worker":"a1","request_id":"c21","attempt_no":1,"event":"released","units":null}
+{"at_ms":50,"occurred_ms":49,"worker":"a1","request_id":null,"attempt_no":null,"event":"node_up","units":null}
+{"at_ms":57,"occurred_ms":56,"worker":"b1","request_id":"c23","attempt_no":2,"event":"first_chunk","units":null}
+{"at_ms":60,"occurred_ms":59,"worker":"b1","request_id":"c23","attempt_no":2,"event":"released","units":null}
+{"at_ms":63,"occurred_ms":62,"worker":"b1","request_id":"c23","attempt_no":2,"event":"sink_finished","units":null}
+{"at_ms":66,"occurred_ms":54,"worker":"a2","request_id":"c23","attempt_no":1,"event":"released","units":null}
+{"at_ms":83,"occurred_ms":83,"worker":"b1","request_id":null,"attempt_no":null,"event":"node_down","units":null}

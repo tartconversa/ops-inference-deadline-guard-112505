@@ -1,0 +1,5 @@
+{"tenant":"caption","pool":"main","model_family":"text","start_ms":0,"end_ms":80,"units":50}
+{"tenant":"caption","pool":"fallback","model_family":"text","start_ms":0,"end_ms":100,"units":28}
+{"tenant":"caption","pool":"main","model_family":"text","start_ms":80,"end_ms":200,"units":38}
+{"tenant":"review","pool":"main","model_family":"text","start_ms":0,"end_ms":80,"units":8}
+{"tenant":"review","pool":"fallback","model_family":"text","start_ms":0,"end_ms":120,"units":8}
