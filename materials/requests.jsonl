@@ -3,6 +3,6 @@
 {"at_ms":12,"op":"submit","request_id":"c21","tenant":"caption","model_family":"text","deadline_ms":61,"units":36,"allow_small":true,"units_ceiling":50}
 {"at_ms":15,"op":"submit","request_id":"c22","tenant":"caption","model_family":"text","deadline_ms":58,"units":25,"allow_small":false,"units_ceiling":39}
 {"at_ms":24,"op":"cancel","request_id":"r12","tenant":null,"model_family":null,"deadline_ms":null,"units":null,"allow_small":null,"units_ceiling":null}
-{"at_ms":33,"op":"submit","request_id":"c23","tenant":"caption","model_family":"text","deadline_ms":72,"units":22,"allow_small":true,"units_ceiling":36}
+{"at_ms":33,"op":"submit","request_id":"c23","tenant":"caption","model_family":"text","deadline_ms":85,"units":22,"allow_small":true,"units_ceiling":36}
 {"at_ms":41,"op":"submit","request_id":"r13","tenant":"review","model_family":"text","deadline_ms":120,"units":20,"allow_small":true,"units_ceiling":34}
 {"at_ms":78,"op":"submit","request_id":"c24","tenant":"caption","model_family":"text","deadline_ms":149,"units":45,"allow_small":false,"units_ceiling":59}
